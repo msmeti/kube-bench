@@ -42,4 +42,4 @@ spec:
           path: "/etc/kubernetes"
       - name: usr-bin
         hostPath:
-          path: "${WORKSPACE}/"
+          path: "/var/jenkins_home/workspace/Kube_Bench/"
