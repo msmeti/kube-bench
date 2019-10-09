@@ -42,4 +42,4 @@ spec:
           path: "/etc/kubernetes"
       - name: usr-bin
         hostPath:
-          path: "/tmp"
+          path: "/usr/bin"
