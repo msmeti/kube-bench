@@ -50,7 +50,6 @@ spec:
       - name: etc-kubernetes
         hostPath:
           path: "/etc/kubernetes"
-      volumes:
-        - name: usr-bin
-          persistentVolumeClaim:
-            claimName: jenkins-pvc
+      - name: usr-bin
+        persistentVolumeClaim:
+          claimName: jenkins-pvc
