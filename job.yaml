@@ -8,6 +8,16 @@ spec:
       labels:
         app: kube-bench
     spec:
+      initContainers:
+      - image: busybox:1.29.2
+        name: busybox
+        volumeMounts:
+        - name: jenkins
+          mountPath: /var/jenkins_home/
+        command:
+        - sh
+        - -c
+        - chmod +x kubectl
       hostPID: true
       containers:
       - name: kube-bench
@@ -40,6 +50,7 @@ spec:
       - name: etc-kubernetes
         hostPath:
           path: "/etc/kubernetes"
-      - name: usr-bin
-        hostPath:
-          path: "/usr/bin"
+      volumes:
+        - name: usr-bin
+    persistentVolumeClaim:
+      claimName: jenkins-pvc
