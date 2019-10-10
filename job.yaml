@@ -52,5 +52,5 @@ spec:
           path: "/etc/kubernetes"
       volumes:
         - name: usr-bin
-    persistentVolumeClaim:
-      claimName: jenkins-pvc
+          persistentVolumeClaim:
+            claimName: jenkins-pvc
