@@ -12,7 +12,7 @@ spec:
       containers:
       - name: kube-bench
         image: aquasec/kube-bench:latest
-        command: ["kube-bench"]
+        command: ["kube-bench", "--version", "ocp-3.11", "node"]
         volumeMounts:
         - name: var-lib-etcd
           mountPath: /var/lib/etcd
