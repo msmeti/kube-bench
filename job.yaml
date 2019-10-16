@@ -12,7 +12,7 @@ spec:
       containers:
       - name: kube-bench
         image: aquasec/kube-bench:latest
-        command: ["kube-bench", "--version", "ocp-3.11", "node"]
+        command: ["kube-bench"]
         volumeMounts:
         - name: var-lib-etcd
           mountPath: /var/lib/etcd
@@ -42,4 +42,4 @@ spec:
           path: "/etc/kubernetes"
       - name: usr-bin
         persistentVolumeClaim:
-          claimName: mmjenkins-pvc
+          claimName: jenkins-pvc
